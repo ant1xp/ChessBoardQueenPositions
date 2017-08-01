@@ -34,7 +34,7 @@ public class ChessBoardMain {
             for (String pos : initialPositions) { //установка ферзей на начально заданные позиции
                 board.placeQueenOnBoard(pos);
             }
-            return !initialPositions.isEmpty();
+            return !initialPositions.isEmpty() && ChessBoardUtil.isValid(board); //проверка валидности установки ферзей на поле по заданным позициям
         }
     }
 

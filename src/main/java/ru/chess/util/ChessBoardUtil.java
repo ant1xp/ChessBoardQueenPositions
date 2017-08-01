@@ -4,7 +4,6 @@ package ru.chess.util;
 import ru.chess.obj.ChessBoard;
 import ru.chess.obj.Position;
 
-import java.util.Random;
 import java.util.StringJoiner;
 import java.util.concurrent.ThreadLocalRandom;
 
