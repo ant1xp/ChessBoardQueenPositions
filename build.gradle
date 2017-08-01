@@ -1,0 +1,48 @@
+apply plugin: 'java'
+
+group = 'chess'
+version = '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+ext {
+    genResources = "$projectDir/src/main/resources"
+}
+
+configurations {
+    tool
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
+        resources {
+            srcDir 'src/main/resources'
+        }
+    }
+
+    test {
+        java {
+            srcDir 'src/main/test'
+        }
+        resources {
+            srcDir 'src/main/resources'
+        }
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version:'4.12'
+}
+
+tasks.withType(JavaExec) {
+    classpath += files('src/main/resources')
+}
